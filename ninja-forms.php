@@ -152,6 +152,13 @@ if( get_option( 'ninja_forms_load_deprecated', FALSE ) && ! ( isset( $_POST[ 'nf
         protected $processes = array();
 
         /**
+         * Append a form metabox instance.
+         *
+         * @var NF_Admin_Metaboxes_AppendAForm
+         */
+        protected $metabox;
+
+        /**
          * Main Ninja_Forms Instance
          *
          * Insures that only one instance of Ninja_Forms exists in memory at any one
@@ -297,7 +304,7 @@ if( get_option( 'ninja_forms_load_deprecated', FALSE ) && ! ( isset( $_POST[ 'nf
                  */
                 register_activation_hook( __FILE__, array( self::$instance, 'activation' ) );
 
-                new NF_Admin_Metaboxes_AppendAForm();
+                self::$instance->metabox = new NF_Admin_Metaboxes_AppendAForm();
 
                 /*
                  * Require EDD auto-update file
