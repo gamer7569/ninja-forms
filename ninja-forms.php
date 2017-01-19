@@ -156,7 +156,7 @@ if( get_option( 'ninja_forms_load_deprecated', FALSE ) && ! ( isset( $_POST[ 'nf
          *
          * @var NF_Admin_Metaboxes_AppendAForm
          */
-        protected $metabox;
+        public $metabox;
 
         /**
          * Main Ninja_Forms Instance
